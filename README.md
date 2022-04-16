@@ -15,7 +15,7 @@
    ```
 
 3. ```
-   R -e "tinytex::latexmk(\"main.tex\",engine=\"xelatex\")"
+    R -e "rmarkdown::render('main.rmd')"
    ```
    首次运行需要较长时间, 因为会自动安装缺失的包
 
