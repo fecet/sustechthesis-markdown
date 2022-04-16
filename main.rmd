@@ -1,0 +1,139 @@
+---
+title: SUSTech thesis R Markdown template
+author: Xie Zejian
+bibliography: ["ref.bib","packages.bib"]
+abstract: "\\lipsum[1]"
+chinese-abstract: "\\lipsum[1]"
+
+keywords: "\\LaTeX, R Markdown, pandoc"
+output:
+  bookdown::pdf_book:
+    toc: false
+    latex_engine: xelatex
+    keep_tex: true
+    template: "template.tex"
+    includes:
+        in_header: ["config/preamble.tex","config/info.tex"]
+always_allow_html: true
+link-citations: yes
+linkcolor: blue
+---
+
+```{r, setup, include=FALSE}
+knitr::opts_chunk$set(warning=FALSE,
+                      message=FALSE,
+                      echo=FALSE, 
+                      fig.width=8)
+## collapse = TRUE
+# dec = 'jpeg'
+# eval = FALSE
+# https://yihui.org/knitr/options/#chunk-options
+```
+
+
+Check [https://bookdown.org/yihui/bookdown/](https://bookdown.org/yihui/bookdown/) and [https://bookdown.org/yihui/rmarkdown/](https://bookdown.org/yihui/rmarkdown/) for detail introduction
+
+
+# Markdown Syntax
+
+**EMTH**, *Italic*, H~2~SO~4~, Fe^2+^, Footnote^[See [markdown syntax](https://bookdown.org/yihui/bookdown/markdown-syntax.html)]
+
+- list
+- list
+
+1. Numbered list
+1. Numbered list
+
+a. Alternative numbered list
+b. Alternative numbered list
+
+Inline Math $a^2+b^2$, Math block:
+$$
+\sum_{i=1}^{\infty}\frac{1}{n^2}=\frac{\pi^2}{6}
+$$
+
+# Markdown extensions by bookdown
+
+Bookdown supply an extension of pandoc, which is already a superset of plain markdwon and TeX.
+
+## Cross reference and citation
+
+@R-bookdown supply a neat way to do cross citation of "theorems"(or numbered environment) and proofs(or unnumbered environment), in which you can write anything freely(even recursively)[@bookdown2016; @rmarkdown2020].
+
+Check source code of theorem \@ref(thm:t1), figure \@ref(fig:fig1), table \@ref(tab:tab1) to see how they work, then you will find two ways to cite(bracketed or not).
+
+
+We refer to [here](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#theorems) for the all supported environments.
+
+
+::: {.theorem #t1 name="Fermat's Last Theorem"}
+
+For $n\ge 2$, there is no $a,b,c\in \mathbb{N}^* \text{ s.t. }$
+$$
+x^{n}+y^{n}=z^{n}
+$$
+
+
+:::
+
+
+:::: {.proof}
+
+ I have discovered a truly marvelous proof of this, which this margin is too narrow to contain
+
+
+::::
+
+
+```{r fig1, fig.align = "center", fig.cap="Text figures", out.width = '70%'}
+
+knitr::include_graphics("figures/example-image-a.png")
+
+```
+
+
+```{r tab1}
+
+knitr::kable(
+  head(mtcars[, 1:8], 10), booktabs = TRUE,
+  caption = 'A table of the first 10 rows of the mtcars data.'
+)
+
+```
+
+# Chapter
+
+
+```{=latex}
+
+\lipsum[1]
+
+```
+
+
+
+```{=latex}
+
+\clearpage
+\参考文献
+
+```
+
+<div id="refs"></div>
+
+\clearpage
+
+# Appendix {-}
+
+Attach code used here
+
+```{=latex}
+
+\clearpage
+
+```
+
+# 致谢 {-}
+
+
+This repo credit to [rmarkdown](), [bookdown](), [knitr]().
