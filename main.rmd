@@ -17,7 +17,7 @@ always_allow_html: true
 link-citations: yes
 linkcolor: blue
 links-as-notes: false
-csl: "chinese-gb7714-1987-numeric.csl"
+csl: "chinese-gb7714-2005-numeric.csl"
 ---
 
 ```{r, setup, include=FALSE}
@@ -64,17 +64,17 @@ Bookdown supply an extension of pandoc, which is already a superset of plain mar
 
 @R-bookdown supply a neat way to do cross citation of "theorems"(or numbered environment) and proofs(or unnumbered environment), in which you can write anything freely(even recursively)[@bookdown2016; @rmarkdown2020].
 
-Check source code of theorem \@ref(thm:t1), figure \@ref(fig:fig1), table \@ref(tab:tab1) to see how they work, then you will find two ways to cite(bracketed or not).
+Check source code of theorem \@ref(thm:t1), figure \@ref(fig:fig1), table \@ref(tab:tab1) to see how they work.
 
 
-We refer to [here](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#theorems) for the all supported environments.
+We refer to [here](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#theorems) for all supported environments.
 
 
 ::: {.theorem #t1 name="Fermat's Last Theorem"}
 
 For $n\ge 2$, there is no $a,b,c\in \mathbb{N}^* \text{ s.t. }$
 $$
-x^{n}+y^{n}=z^{n}
+a^{n}+b^{n}=c^{n}
 $$
 
 
