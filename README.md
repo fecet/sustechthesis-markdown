@@ -11,12 +11,12 @@
    ```R
    install.packages("tinytex")
    install.packages("bookdown")
-   install.packages("reticulate")
+   install.packages("reticulate") #just for including python code
    tinytex::install_tinytex()
    ```
 
 3. ```
-    R -e "rmarkdown::render('main.rmd')"
+   R -e "rmarkdown::render('main.rmd')"
    ```
    首次运行需要较长时间, 因为会自动安装缺失的包
 
