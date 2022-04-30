@@ -4,7 +4,6 @@ author: Xie Zejian
 bibliography: ["ref.bib","packages.bib"]
 abstract: "\\lipsum[1]"
 chinese-abstract: "\\lipsum[1]"
-
 keywords: "\\LaTeX, R Markdown, pandoc"
 output:
   bookdown::pdf_book:
@@ -17,6 +16,8 @@ output:
 always_allow_html: true
 link-citations: yes
 linkcolor: blue
+links-as-notes: true
+csl: "chinese-gb7714-1987-numeric.csl"
 ---
 
 ```{r, setup, include=FALSE}
@@ -30,13 +31,16 @@ knitr::opts_chunk$set(warning=FALSE,
 # https://yihui.org/knitr/options/#chunk-options
 ```
 
+The following are useful for understanding R Markdown:
 
-Check [https://bookdown.org/yihui/bookdown/](https://bookdown.org/yihui/bookdown/) and [https://bookdown.org/yihui/rmarkdown/](https://bookdown.org/yihui/rmarkdown/) for detail introduction
+- [Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)
+- [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+- [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
 
 
 # Markdown Syntax
 
-**EMTH**, *Italic*, H~2~SO~4~, Fe^2+^, Footnote^[See [markdown syntax](https://bookdown.org/yihui/bookdown/markdown-syntax.html)]
+**EMTH**, *Italic*, H~2~SO~4~, Fe^2+^, Footnote^[Some footnote]
 
 - list
 - list
@@ -121,19 +125,29 @@ knitr::kable(
 
 <div id="refs"></div>
 
-\clearpage
+\newpage
 
-# Appendix {-}
+# (APPENDIX) Appendix {-}
+
+# Code
 
 Attach code used here
 
-```{=latex}
+```{python, file="code/examples/utils.py", eval=FALSE,echo=TRUE}
 
-\clearpage
+
 
 ```
+
+
+
+\newpage
+
 
 # 致谢 {-}
 
 
-This repo credit to [rmarkdown](), [bookdown](), [knitr]().
+This repo credit to:
+
+- [sustechthesis](https://github.com/iydon/sustechthesis)
+

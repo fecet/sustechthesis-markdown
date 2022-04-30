@@ -11,6 +11,7 @@
    ```R
    install.packages("tinytex")
    install.packages("bookdown")
+   install.packages("reticulate")
    tinytex::install_tinytex()
    ```
 
