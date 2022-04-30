@@ -25,4 +25,5 @@
 # 上游项目
 
 - [sustechthesis](https://github.com/iydon/sustechthesis)
-
+- [bookdown](https://github.com/rstudio/bookdown)
+- [tinytex](https://github.com/yihui/tinytex)

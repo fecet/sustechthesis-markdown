@@ -246,3 +246,7 @@ TSWLatexianTemp*
 
 test.tex
 main.tex
+
+.RData
+.Rhistory
+main.knit.md

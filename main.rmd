@@ -16,7 +16,7 @@ output:
 always_allow_html: true
 link-citations: yes
 linkcolor: blue
-links-as-notes: true
+links-as-notes: false
 csl: "chinese-gb7714-1987-numeric.csl"
 ---
 
@@ -150,4 +150,5 @@ Attach code used here
 This repo credit to:
 
 - [sustechthesis](https://github.com/iydon/sustechthesis)
-
+- [bookdown](https://github.com/rstudio/bookdown)
+- [tinytex](https://github.com/yihui/tinytex)
