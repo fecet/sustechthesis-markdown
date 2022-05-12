@@ -2,9 +2,10 @@
 title: SUSTech thesis R Markdown template
 author: Xie Zejian
 bibliography: ["ref.bib","packages.bib"]
-abstract: "\\lipsum[1]"
-chinese-abstract: "\\lipsum[1]"
+关键词: "关键词1，关键词2"
 keywords: "\\LaTeX, R Markdown, pandoc"
+摘要: "中文的摘要"
+abstract: "\\lipsum[1]"
 output:
   bookdown::pdf_book:
     toc: false

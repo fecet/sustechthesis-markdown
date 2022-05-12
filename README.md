@@ -14,11 +14,13 @@
    install.packages("reticulate") #just for including python code
    tinytex::install_tinytex()
    ```
+4. 修改"config/info.tex"
 
 3. ```
    R -e "rmarkdown::render('main.rmd')"
    ```
    首次运行需要较长时间, 因为会自动安装缺失的包
+
 
 
 
