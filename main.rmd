@@ -18,7 +18,7 @@ always_allow_html: true
 link-citations: yes
 linkcolor: blue
 links-as-notes: false
-csl: "./china-national-standard-gb-t-7714-2015-author-date.csl"
+csl: "./china-national-standard-gb-t-7714-2015-modified.csl"
 ---
 
 ```{r, setup, include=FALSE}

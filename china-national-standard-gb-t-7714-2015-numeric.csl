@@ -47,6 +47,9 @@
   <macro name="accessed-date">
     <date variable="accessed" form="numeric" prefix="[" suffix="]"/>
   </macro>
+  <macro name="anon">
+    <text term="anonymous" form="short" text-case="capitalize-first" strip-periods="true"/>
+  </macro>
   <!-- 主要责任者 -->
   <macro name="author">
     <names variable="author">
@@ -63,6 +66,33 @@
             <names variable="editor"/>
           </if>
         </choose>
+      </substitute>
+    </names>
+  </macro>
+  <!-- 参考文献表的著者姓名与出版年 -->
+  <macro name="author-date">
+    <group delimiter=", ">
+      <text macro="author"/>
+      <text macro="issued-year"/>
+    </group>
+  </macro>
+  <!-- 正文引用的著者姓名 -->
+  <macro name="author-intext">
+    <names variable="author">
+      <!-- 国标 10.2.2 节要求姓氏与“et al.”“等”之间留适当空隙 -->
+      <name form="short" delimiter="&#160;" delimiter-precedes-et-al="always">
+        <name-part name="family" text-case="uppercase"/>
+      </name>
+      <substitute>
+        <names variable="composer"/>
+        <names variable="illustrator"/>
+        <names variable="director"/>
+        <choose>
+          <if variable="container-title" match="none">
+            <names variable="editor"/>
+          </if>
+        </choose>
+        <text macro="anon"/>
       </substitute>
     </names>
   </macro>
@@ -396,7 +426,11 @@
   <!-- 正文中引用的文献标注格式 -->
   <macro name="citation-layout">
     <group>
-      <text variable="citation-number"/>
+      <group delimiter=", ">
+        <text macro="author-intext"/>
+        <text macro="issued-year"/>
+        <text variable="citation-number"/>
+      </group>
     </group>
   </macro>
   <!-- 参考文献表格式 -->
