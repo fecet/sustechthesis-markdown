@@ -255,7 +255,6 @@
       <text macro="accessed-date"/>
       <group delimiter=". " prefix=". ">
         <text variable="URL"/>
-        <text variable="DOI" prefix="DOI:"/>
       </group>
     </layout>
   </bibliography>

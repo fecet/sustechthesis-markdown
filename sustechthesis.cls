@@ -119,8 +119,8 @@
   \renewcommand{\captionfont}{\bfseries\songti\zihao{5}} %表题,图题用五号宋体加黑
   \DeclareCaptionLabelSeparator{enspace}{\enspace}
   \DeclareCaptionLabelFormat{rightBracket}{#2)}
-  \captionsetup[table]{labelsep=enspace,name={表}} %表序表题之间没有标点,而是一个空格,默认前缀为表
-  \captionsetup[figure]{labelsep=enspace,name={图}} %图序图题之间没有标点,而是一个空格，默认前缀为图
+  \captionsetup[table]{labelsep=enspace,name={Table}} %表序表题之间没有标点,而是一个空格,默认前缀为表
+  \captionsetup[figure]{labelsep=enspace,name={Figure}} %图序图题之间没有标点,而是一个空格，默认前缀为图
   \captionsetup[subfigure]{labelformat=rightBracket, labelsep=enspace}% 子图a,b,c外没有括号
 
 \RequirePackage[MSWordLineSpacingMultiple=1.5]{zhlineskip}
@@ -418,6 +418,14 @@
   \addcontentsline{toc}{section}{参考文献}
   \sectionmark{参考文献}
   \section*{\centerline{参考文献}}
+}
+
+
+\newcommand{\references}{
+  % 或者可以将refname置空, 按照附录的样式修改.
+  \addcontentsline{toc}{section}{References}
+  \sectionmark{References}
+  \section*{\centerline{References}}
 }
 % 附录
 \newcommand{\附录}{
